@@ -113,6 +113,17 @@ body {
     background-color: #218838;
 }
 
+.comments-section {
+    width: 100%;
+    max-width: 500px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .theme-toggle {
     position: absolute;
     top: 15px;
