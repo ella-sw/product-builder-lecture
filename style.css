@@ -1,23 +1,67 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #fff;
+    --text-color: #333;
+    --shadow-color: rgba(0,0,0,0.1);
+    --btn-bg: #007BFF;
+    --btn-hover: #0056b3;
+    --ball-bg: #4CAF50;
+    --ball-hover: #45a049;
+}
+
+[data-theme="dark"] {
+    --bg-color: #18191a;
+    --card-bg: #242526;
+    --text-color: #e4e6eb;
+    --shadow-color: rgba(0,0,0,0.5);
+    --btn-bg: #3a3b3c;
+    --btn-hover: #4e4f50;
+    --ball-bg: #0081ff;
+    --ball-hover: #0073e6;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f2f5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .lotto-machine {
     text-align: center;
-    background: #fff;
+    background: var(--card-bg);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(128, 128, 128, 0.2);
 }
 
 h1 {
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 30px;
 }
 
@@ -26,6 +70,7 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
+    min-height: 60px;
 }
 
 .number {
@@ -35,7 +80,7 @@ h1 {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #4CAF50;
+    background-color: var(--ball-bg);
     color: white;
     font-size: 24px;
     font-weight: bold;
@@ -45,14 +90,14 @@ h1 {
 
 .number:hover {
     transform: scale(1.1);
-    background-color: #45a049;
+    background-color: var(--ball-hover);
 }
 
 #generate-btn {
     padding: 15px 30px;
     font-size: 18px;
     color: white;
-    background-color: #007BFF;
+    background-color: var(--btn-bg);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -61,7 +106,7 @@ h1 {
 }
 
 #generate-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--btn-hover);
     transform: translateY(-2px);
 }
 
